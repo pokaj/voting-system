@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="assets/js/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <form class="login-form">
+            <input id="admin_phone" type="tel" placeholder="phone" required/>
+            <input id="password" type="password" placeholder="password" required/>
+            <button id="admin_login">login</button>
+        </form>
+    </div>
+</div>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/additional.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</body>
+</html>
