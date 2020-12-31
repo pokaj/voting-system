@@ -9,21 +9,25 @@ const client = require('twilio')(process.env.accountSID, process.env.authToken);
 
 exports.login = async (req, res) =>{
     const phone = '+233' + req.body.phone.slice(1,10);
-
-    try{
-        await client
-            .verify
-            .services(process.env.serviceID)
-            .verifications
-            .create({
-                to: phone,
-                channel: 'sms'
-            });
-        return res.status(200).json({message: 'kindly check your phone for your verification code'});
-    }
-    catch (error) {
-        console.log(error);
-        return res.status(500).json(error);
+    const user = await User.findOne({phone: phone});
+    if(user == null) {
+        return res.status(200).json({status: false, message: 'User with this number does not exist. Kindly contact the admin.'})
+    }else {
+        try{
+            await client
+                .verify
+                .services(process.env.serviceID)
+                .verifications
+                .create({
+                    to: phone,
+                    channel: 'sms'
+                });
+            return res.status(200).json({status: true, message: 'kindly check your phone for your verification code'});
+        }
+        catch (error) {
+            console.log(error);
+            return res.status(500).json(error);
+        }
     }
 }
 
@@ -54,7 +58,7 @@ exports.verify = async (req, res) =>{
     }
     catch (error) {
         console.log(error);
-        return res.status(500).json({error: error, message: 'Authentication Failed', status: false});
+        return res.status(200).json({error: error, message: 'Authentication Failed', status: false});
     }
 }
 

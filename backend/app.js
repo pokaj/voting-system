@@ -9,6 +9,7 @@ const AdminRoutes = require('./api/routes/admin');
 const UserRoutes = require('./api/routes/user');
 
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

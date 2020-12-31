@@ -78,6 +78,7 @@ exports.add_candidate = async (req, res) => {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             phone: phone,
+            image: req.path.image,
             category: req.body.category
         });
 
