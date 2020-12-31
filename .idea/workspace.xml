@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5f1ddda-aab0-4723-8dc9-fdada8da052d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/uploads/162364f0d603860ce2da35d0cd84a697" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/uploads/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/uploads/9.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api/controllers/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/controllers/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/controllers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api/models/candidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/models/candidate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/routes/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/js/additional.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/js/additional.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/js/president.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/js/president.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/verify.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/verify.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +42,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1m4MvCJWc7z0jAMUtumTdn029rx" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -57,6 +78,10 @@
       <option name="presentableId" value="Default" />
       <updated>1608748638386</updated>
       <workItem from="1608748639656" duration="69910000" />
+      <workItem from="1608879071480" duration="2315000" />
+      <workItem from="1608893500449" duration="709000" />
+      <workItem from="1609238615671" duration="6255000" />
+      <workItem from="1609416997076" duration="1361000" />
     </task>
     <servers />
   </component>
@@ -73,5 +98,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

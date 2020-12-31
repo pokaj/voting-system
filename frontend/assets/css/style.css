@@ -8286,3 +8286,12 @@ a[data-toggle="collapse"] {
 
 .footer p {
   color: rgba(255, 255, 255, 0.5); }
+
+  
+.hide_button{
+  display: none;
+}
+
+.hover:hover .hide_button {
+  display: block;
+}

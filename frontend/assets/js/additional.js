@@ -9,7 +9,7 @@ $(document).ready(()=> {
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/api/user/categories',
+        url: 'https://voters-application.herokuapp.com/api/user/categories',
         headers: {
             "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
         },
@@ -21,7 +21,7 @@ $(document).ready(()=> {
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/api/user/standings',
+        url: 'https://voters-application.herokuapp.com/api/user/standings',
         headers: {
             "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
         },
@@ -39,7 +39,7 @@ $(document).ready(()=> {
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/api/user/categories',
+        url: 'https://voters-application.herokuapp.com/api/user/categories',
         headers: {
             "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
         },
@@ -55,7 +55,7 @@ $(document).ready(()=> {
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/api/user/standings',
+        url: 'https://voters-application.herokuapp.com/api/user/standings',
         headers: {
             "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
         },
@@ -79,10 +79,17 @@ $(document).ready(()=> {
         e.preventDefault();
         let phone = $('#admin_phone').val();
         let password = $('#password').val();
+        if(phone.length != 10) {
+            return Swal.fire(
+                "Sorry",
+                `You entered a wrong number. Kindly confirm. Number Entered: ${phone}`,
+                "error"
+            );
+        }
 
         $.ajax({
            type: 'post',
-           url: 'http://localhost:3000/api/admin/login',
+           url: 'https://voters-application.herokuapp.com/api/admin/login',
            data: {
                phone: phone,
                password: password,
@@ -107,10 +114,17 @@ $(document).ready(()=> {
        let firstname = $('#firstname').val();
        let lastname = $('#lastname').val();
        let phone = $('#phone').val();
+       if(phone.length != 10){
+        return Swal.fire(
+            "Sorry",
+            `You entered a wrong number. Kindly confirm. Number Entered: ${phone}`,
+            "error"
+        );
+       }
 
        $.ajax({
            type: 'post',
-           url: 'http://localhost:3000/api/admin/add-user',
+           url: 'https://voters-application.herokuapp.com/api/admin/add-user',
            headers: {
                "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
            },
@@ -143,10 +157,18 @@ $(document).ready(()=> {
        let lastname = $('#cand_lname').val();
        let phone = $('#cand_phone').val();
        let category = $('#category').val();
+    //    let image = $('#image').val().split('fakepath\\')[1];
+       if(phone.length != 10){
+        return Swal.fire(
+            "Sorry",
+            `You entered a wrong number. Kindly confirm. Number Entered: ${phone}`,
+            "error"
+        );
+       }
 
        $.ajax({
            type: 'post',
-           url: 'http://localhost:3000/api/admin/add-candidate',
+           url: 'https://voters-application.herokuapp.com/api/admin/add-candidate',
            headers: {
                "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
            },
@@ -154,7 +176,8 @@ $(document).ready(()=> {
                firstname: firstname,
                lastname: lastname,
                phone: phone,
-               category: category
+               category: category,
+            //    image: image
            },
            success: ((response)=>{
                if(response.status === true){
@@ -180,7 +203,7 @@ $(document).ready(()=> {
 
         $.ajax({
             type: 'post',
-            url: 'http://localhost:3000/api/admin/add-category',
+            url: 'https://voters-application.herokuapp.com/api/admin/add-category',
             headers: {
                 "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
             },

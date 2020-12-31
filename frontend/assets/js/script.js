@@ -2,8 +2,15 @@ $(document).ready(()=>{
     $('#login').on('click', (e)=>{
         e.preventDefault();
         const phone = $('#phone').val();
+        if(phone.length !== 10) {
+            return Swal.fire(
+                "Sorry",
+                `You entered a wrong number. Kindly confirm. Number Entered: ${phone}`,
+                "error"
+            );
+        }
         localStorage.setItem('phone', phone);
-
+ 
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -12,12 +19,20 @@ $(document).ready(()=>{
 
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/api/user/login',
+            url: 'https://voters-application.herokuapp.com/api/user/login',
             data: {
                 phone:phone
             },
             success: ((response)=>{
-                window.location.replace("verify.html");
+                if(response.status === true){
+                    window.location.replace("verify.html");
+                }else {
+                    return Swal.fire(
+                        "Sorry",
+                        `${response.message}`,
+                        "error"
+                    );
+                }
             })
         });
     });
@@ -27,6 +42,13 @@ $(document).ready(()=>{
         e.preventDefault();
         const phone = localStorage.getItem('phone');
         const code = $('#code').val();
+        if(code === ''){
+            return Swal.fire(
+                "Sorry",
+                "Please enter your code",
+                "error"
+            );
+        }
 
         $.ajaxSetup({
             headers: {
@@ -36,7 +58,7 @@ $(document).ready(()=>{
 
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/api/user/verify-token',
+            url: 'https://voters-application.herokuapp.com/api/user/verify-token',
             data: {
                 phone:phone,
                 code:code

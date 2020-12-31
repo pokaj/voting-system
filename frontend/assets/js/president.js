@@ -9,18 +9,18 @@ $(document).ready(()=> {
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/api/user/presidents',
+        url: 'https://voters-application.herokuapp.com/api/user/presidents',
         headers: {
             "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
         },
         success: ((response) => {
             let results = '';
             response.forEach(item => {
-                results += `<div class='card' style='margin-left: 10px; float: left; width: 15rem;'>
+                results += `<div class='card hover' style='margin-left: 10px; float: left; width: 15rem;'>
                         <img class="card-img-top" src="assets/images/user.png">
                 <div class="card-body">
                     <h5 class="card-title">${item.firstname} ${item.lastname}</h5>
-                    <button id='id${item._id}' class="btn btn-primary" onclick="cast_vote(this.id)">Vote</button>
+                    <button id='id${item._id}' class="btn btn-primary hide_button" onclick="cast_vote(this.id)">Vote</button>
                 </div>
         </div>`
             });
@@ -30,18 +30,18 @@ $(document).ready(()=> {
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/api/user/vice-presidents',
+        url: 'https://voters-application.herokuapp.com/api/user/vice-presidents',
         headers: {
             "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
         },
         success: ((response) => {
             let results = '';
             response.forEach(item => {
-                results += `<div class='card' style='margin-left: 10px; float: left; width: 15rem;'>
+                results += `<div class='card hover' style='margin-left: 10px; float: left; width: 15rem;'>
                         <img class="card-img-top" src="assets/images/user.png">
                 <div class="card-body">
                     <h5 class="card-title">${item.firstname} ${item.lastname}</h5>
-                    <button id='id${item._id}' class="btn btn-primary" onclick="cast_vote(this.id)">Vote</button>
+                    <button id='id${item._id}' class="btn btn-primary hide_button" onclick="cast_vote(this.id)">Vote</button>
                 </div>
         </div>`
             });
@@ -52,18 +52,18 @@ $(document).ready(()=> {
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/api/user/parliamentary',
+        url: 'https://voters-application.herokuapp.com/api/user/parliamentary',
         headers: {
             "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
         },
         success: ((response) => {
             let results = '';
             response.forEach(item => {
-                results += `<div class='card' style='margin-left: 10px; float: left; width: 15rem;'>
+                results += `<div class='card hover' style='margin-left: 10px; float: left; width: 15rem;'>
                         <img class="card-img-top" src="assets/images/user.png">
                 <div class="card-body">
                     <h5 class="card-title">${item.firstname} ${item.lastname}</h5>
-                    <button id='id${item._id}' class="btn btn-primary" onclick="cast_vote(this.id)">Vote</button>
+                    <button id='id${item._id}' class="btn btn-primary hide_button" onclick="cast_vote(this.id)">Vote</button>
                 </div>
         </div>`
             });
@@ -84,7 +84,7 @@ let cast_vote = (id) =>{
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/api/user/vote',
+        url: 'https://voters-application.herokuapp.com/api/user/vote',
         headers: {
             "Authorization": `Bearer ${JSON.parse(localStorage.getItem('token'))}`
         },
